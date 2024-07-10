@@ -9,7 +9,7 @@ class PageController extends Controller
     public function show($slug)
     {
         $directus = app('directus');
-        $pageResponse = $directus->get_items('pages', [
+        $pageResponse = $directus->get('pages', [
             'filter' => ['slug' => $slug]
         ]);
         $page = $pageResponse['data'][0];

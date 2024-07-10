@@ -9,7 +9,7 @@ class HomeController extends Controller
     public function index()
     {
         $directus = app('directus');
-        $settingsResponse = $directus->get_items('global_settings');
+        $settingsResponse = $directus->get('global_settings');
         $settings = $settingsResponse['data'];
         return view('home', compact('settings'));
     }
